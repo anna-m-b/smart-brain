@@ -10,7 +10,7 @@ const Register = ({ onRouteChange, loadUser }) => {
   }
 
   async function onRegisterSubmit() {
-    const resp = await fetch('http://localhost:3001/register', {
+    const resp = await fetch('https://frozen-castle-11524.herokuapp.com/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(registerInput)

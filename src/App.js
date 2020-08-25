@@ -43,7 +43,7 @@ class App extends React.Component {
   state = initialState;
 
   async componentDidMount() {
-    const resp = await fetch('http://localhost:3001')
+    const resp = await fetch('https://frozen-castle-11524.herokuapp.com/')
     const users = await resp.json()
     console.log('this.state.user in componentDidMount', this.state.user)
 
@@ -94,7 +94,7 @@ class App extends React.Component {
 
  onSubmit = () => {
   this.setState({imageUrl: this.state.input})
-  fetch('http://localhost:3001/imageUrl', {
+  fetch('https://frozen-castle-11524.herokuapp.com/mageUrl', {
     method: 'post',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({input: this.state.input})
@@ -112,7 +112,7 @@ class App extends React.Component {
  }
 
  getEntries = () => {
-    fetch('http://localhost:3001/image', {
+    fetch('https://frozen-castle-11524.herokuapp.com/image', {
     method: 'put',
     headers: {'Content-type': 'application/json'},
     body: JSON.stringify({id: this.state.user.id})
